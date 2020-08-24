@@ -2,8 +2,6 @@
 
 A simple sequencer for Arduino Due with 3.5" 8-bit tft-display(e.g.MCUfriends) and vs1053.
 
-Switch to sloeber IDE(http://eclipse.baeyens.it/).
-
 
 # Needed libraries:
 ```sh
