@@ -180,7 +180,7 @@ unsigned long instNoteOff[4][13][16];
 unsigned short interval = 200, rotInterval = 600, xDraw, yDraw, xx, yy, note, pat, nextPat, copyPat, stp, slope, slope2, slope3, touched;
 unsigned short tick, tempo = 120;
 unsigned short drumSet[13] = {35, 38, 44, 42, 43, 48, 47, 49, 56, 60, 61, 83};
-unsigned long color;
+unsigned long color, SpiSpeed = 50000;
 unsigned long currentMillis, previousMillis, currTime, prevTime;
 String printInst;
 String noteName[] = {"- C","-#C","- D","-#D","- E","-#E","- F","- G","-#G","- A","-#A","- B"};
@@ -231,7 +231,7 @@ digitalWrite(VS_RESET, true);
 SPI.begin();
 SPI.setBitOrder(MSBFIRST);
 SPI.setDataMode(SPI_MODE0);
-SPI.setClockDivider(50000); //Set SPI bus speed to 50K
+SPI.setClockDivider(SpiSpeed); //Set SPI bus speed to 50K
 
 // *** Use serial for debugging
 //  Serial.begin(9600);
