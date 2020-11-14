@@ -14,11 +14,11 @@ Install these libraries from the library manager in the Arduino IDE.
 
 Now we must configure some on the SdFat libray. Edit the SdFatConfig.h, and change
 ```sh
-#define ENABLE_SOFTWARE_SPI_CLASS 0
+#define SPI_DRIVER_SELECT 0
 ```
 to
 ```sh
-#define ENABLE_SOFTWARE_SPI_CLASS 1
+#define SPI_DRIVER_SELECT 2
 ```
 
 # Wiring
