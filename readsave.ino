@@ -8,7 +8,7 @@ void readPat()
 {
   for (slope = 0; slope < 3; slope++) {
     String str = String(slope) + "." + String(pat) + "_pat.txt";
-    file = SD.open(str);
+    file = sd.open(str);
     if (file) {
       for (slope2 = 0; slope2 < 13; slope2++) {
         String test = file.readStringUntil('\n');
@@ -24,7 +24,7 @@ void readPat()
 }
 void savePat() {
   String str = String(instSelect) + "." + String(pat) + "_pat.txt";
-  file = SD.open(str, FILE_WRITE);
+  file = sd.open(str, FILE_WRITE);
   file.rewind();
   for (slope = 0; slope < 13; slope++) {
     file.println(instrument[instSelect][slope][pat]);
@@ -36,7 +36,7 @@ void savePat() {
 }
 void readCalibrate() {
   String test;
-  file = SD.open("calibrate.txt");
+  file = sd.open("calibrate.txt");
   if (file) {
     test = file.readStringUntil('\n');
     TS_MINX = test.toInt();
@@ -49,7 +49,3 @@ void readCalibrate() {
     file.close();
   } else calibrate();
 }
-
-
-
-

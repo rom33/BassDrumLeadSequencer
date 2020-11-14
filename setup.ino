@@ -92,7 +92,7 @@ void calibrate() {
   WaitTouch;
   GetTouchPoints;
   if (Calibrate.contains(xx, yy)) {
-    file = SD.open("calibrate.txt", FILE_WRITE);
+    file = sd.open("calibrate.txt", FILE_WRITE);
     file.rewind();
     file.println(TS_MINX);
     file.println(TS_MAXX);
@@ -120,7 +120,3 @@ void drawCrossHair(int x, int y, int color)
   tft.drawLine(x - 5, y, x + 5, y, color);
   tft.drawLine(x, y - 5, x, y + 5, color);
 }
-
-
-
-

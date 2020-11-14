@@ -22,8 +22,11 @@ MCUFRIEND_kbv tft;
 Adafruit_GFX_Button mybutton = Adafruit_GFX_Button();
 
 // *** card-reader
-SdFatSoftSpi<12, 11, 13> SD; //Bit-Bang on the Shield pins
-#define CS_PIN 10
+#define SD_FAT_TYPE 0
+
+SoftSpiDriver<12, 11, 13> SD; //Bit-Bang on the Shield pins
+#define SD_CONFIG SdSpiConfig(10, DEDICATED_SPI, SD_SCK_MHZ(0), &SD)
+SdFat sd;
 File file;
 
 // *** midi
@@ -259,7 +262,7 @@ tft.fillScreen(TFT_BLUE);
 welcomeScreen();
 
 // *** card-reader begin
-SD.begin(CS_PIN);
+sd.begin(SD_CONFIG);
 
 readCalibrate();
 patternScreen();
